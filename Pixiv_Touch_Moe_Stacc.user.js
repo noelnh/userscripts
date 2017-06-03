@@ -3,13 +3,13 @@
 // @namespace   noelpinch
 // @description For Pixiv mobile
 // @include     https://touch.pixiv.net/stacc*
-// @version     0.2
+// @version     0.2.1
 // @grant       none
 // ==/UserScript==
 //
 
 (function() {
-    console.log('pixiv touch moe stacc v0.2');
+    console.log('pixiv touch moe stacc v0.2.1');
 
     // Global style: imgbox size -> unset
     var css = '.stacclist li.illust div.imgbox.bookmark img {max-height: unset; max-width: unset;}',
@@ -42,7 +42,8 @@
         }
         for (; count2 < imglist2.length; count2++) {
             var imgs = imglist2[count2].getElementsByClassName("image");
-            imgs[0].style.backgroundImage = imgs[0].style.backgroundImage.replace('260x260', '600x600');
+            imgs[0].style.backgroundImage = imgs[0].style.backgroundImage
+                .replace('260x260', '600x600').replace('128x128', '600x600');
         }
     }
     replace_imgs();
